@@ -17,6 +17,17 @@ class Questions(Base):
     OptionC = Column(String)
     OptionD = Column(String)
 
+    @property
+    def serialize(self):
+        """Return object data in easily serializeable format"""
+        return {
+            'index': self.index,
+            'question': self.question,
+            'OptionA': self.OptionA,
+            'OptionB': self.OptionB,
+            'OptionC': self.OptionC,
+            'OptionD': self.OptionD,
+        }
 
 
 engine = create_engine('sqlite:///quidditch_questions.db')
