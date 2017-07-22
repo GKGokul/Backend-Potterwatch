@@ -1,3 +1,4 @@
+# The database file for the User database
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
@@ -5,8 +6,7 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 
-# The database is created here.
-
+# The User database is created here.
 class User(Base):
     __tablename__ = 'user'
 
@@ -16,7 +16,6 @@ class User(Base):
     photouri = Column(String)
     gender = Column(String)
     accesstoken = Column(String)
-
 
 
 engine = create_engine('sqlite:///userinfo.db')

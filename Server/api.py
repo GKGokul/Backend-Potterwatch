@@ -1,13 +1,11 @@
-import json
+# The RESTful API.
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
-import httplib2
-
 from flask import Flask, request
-
-import question_generator
 from user_database import Base, User
+import json
+import httplib2
+import question_generator
 
 app = Flask(__name__)
 
@@ -20,14 +18,13 @@ appid = '115224489100238'
 appsecret = '108dd482d07cfa16df57e659fb6b92b3'
 
 
-# This is just the home of the Server
+# Home of the Server
 @app.route('/')
 def home():
-    print 'HOME of the Server'
     return 'HOME of the Server'
 
 
-# This is the decorator for interacting with Facebook API
+# Decorator for interacting with Facebook API
 @app.route('/fbconnect', methods=['POST', 'GET'])
 def fbconnect():
     print request
@@ -57,9 +54,6 @@ def fbconnect():
     return 'SUCCESS'
 
 
-array = []
-
-
 # This is the decorator for the retrival of question for quidditch
 @app.route('/questions', methods=['GET'])
 def giveQuestion():
@@ -69,4 +63,4 @@ def giveQuestion():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='192.168.43.108', port=8080)
+    app.run(host='192.168.43.232', port=8080)

@@ -1,11 +1,10 @@
+# The database file for the Quidditch Questions
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
-# The database is created here.
 
 class Questions(Base):
     __tablename__ = 'questions'
