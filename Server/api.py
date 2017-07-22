@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 import httplib2
+
 from flask import Flask, request
 
 import question_generator
@@ -63,9 +64,9 @@ array = []
 @app.route('/questions', methods=['GET'])
 def giveQuestion():
     value = question_generator.TheFunction()
-    print(value)
+    return value
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='192.168.43.232', port=8080)
+    app.run(host='192.168.43.108', port=8080)

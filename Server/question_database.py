@@ -16,6 +16,7 @@ class Questions(Base):
     OptionB = Column(String)
     OptionC = Column(String)
     OptionD = Column(String)
+    answer = Column(String)
 
     @property
     def serialize(self):
@@ -27,6 +28,7 @@ class Questions(Base):
             'OptionB': self.OptionB,
             'OptionC': self.OptionC,
             'OptionD': self.OptionD,
+            'answer': self.answer,
         }
 
 

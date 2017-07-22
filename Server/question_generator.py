@@ -1,14 +1,16 @@
 from random import randint
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 
-from flask import Flask
+from flask import Flask, jsonify
+
+import json
 
 from question_database import Base, Questions
 
 app = Flask(__name__)
 
-engine = create_engine('sqlite:///quidditch_questions.db')
+engine = create_engine('sqlite:///quidditch_questions.db', connect_args={'check_same_thread': False}, echo=True)
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -43,24 +45,13 @@ def TheFunction():
     question = []
     for i in value:
         name = "question"+str(i.index)
-        question.append({name: {"question": str(i.question), "optionA": str(i.OptionA), "optionB": str(i.OptionB), "optionC": str(i.OptionC), "optionD": str(i.OptionD) }})
+        question.append({name: {"question": str(i.question), "optionA": str(i.OptionA), "optionB": str(i.OptionB), "optionC": str(i.OptionC), "optionD": str(i.OptionD), "answer": str(i.answer)}})
+
 
     #jsondata[0].append(question)
-    jsondata["Questions"] = question
+    jsonStr = json.dumps(question)
+    print(jsonStr)
+    return jsonStr
 
-    return jsondata
-
-'''
-    for i in value:
-        print jsonify({
-            '%s' : '%s',
-            '%s' : '%s',
-            '%s': '%s',
-            '%s': '%s',
-            '%s': '%s'
-            %('question',str(i.question),'optionA',str(i.OptionA),'optionB',str(i.OptionB),'optionC',str(i.OptionC),'optionD',str(i.OptionD))
-        })
-        break;
-'''
 
 TheFunction()
