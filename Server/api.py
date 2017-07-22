@@ -55,13 +55,15 @@ def fbconnect():
 
     return 'SUCCESS'
 
+
 array = []
+
+
 # This is the decorator for the retrival of question for quidditch
 @app.route('/questions', methods=['GET'])
 def giveQuestion():
     value = question_generator.TheFunction()
-    print value
-    return "SUCCESS"
+    print(value)
 
 
 if __name__ == '__main__':
