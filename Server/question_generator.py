@@ -40,7 +40,7 @@ def TheFunction():
 
     question = []
     for i in value:
-        name = "question" + str(i.index)
+        name = "questions"
         question.append({name: {"question": str(i.question), "optionA": str(i.OptionA), "optionB": str(i.OptionB),
                                 "optionC": str(i.OptionC), "optionD": str(i.OptionD), "answer": str(i.answer)}})
 
