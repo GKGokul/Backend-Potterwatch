@@ -63,4 +63,7 @@ def giveQuestion():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='192.168.43.232', port=8080)
+
+    #TODO: Change IP before running
+
+    app.run(host='192.168.43.198', port=8080)

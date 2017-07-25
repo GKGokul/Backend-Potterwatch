@@ -20,8 +20,8 @@ array = []
 
 # Generating a random number and adding to the array
 def generatenumber():
-    while len(array) < 10:
-        randomNumber = (randint(1, 10))
+    while len(array) < 20:
+        randomNumber = (randint(1, 20))
         if ((randomNumber in array) or randomNumber == None):
             generatenumber()
         else:
