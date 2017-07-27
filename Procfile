@@ -1,2 +1,2 @@
-web: python Backend-Potterwatch/api.py
+web: python Server/api.py
 
