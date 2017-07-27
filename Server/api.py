@@ -27,18 +27,18 @@ def home():
 # Decorator for interacting with Facebook API
 @app.route('/fbconnect', methods=['POST', 'GET'])
 def fbconnect():
-    print request
+    print(request)
     name = request.json.get("name")
     id = request.json.get("id")
     email = request.json.get("email")
     gender = request.json.get("gender")
     auth_token = request.json.get("auth_token")
 
-    print name
-    print id
-    print email
-    print gender
-    print auth_token
+    print(name)
+    print(id)
+    print(email)
+    print(gender)
+    print(auth_token)
 
     url = (
         'https://graph.facebook.com/oauth/access_token?client_id=%s&client_secret=%s&grant_type=fb_exchange_token&fb_exchange_token=%s' % (
