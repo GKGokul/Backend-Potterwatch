@@ -21,8 +21,7 @@ appsecret = '108dd482d07cfa16df57e659fb6b92b3'
 # Home of the Server
 @app.route('/')
 def home():
-    return 'HOME of the Server'
-
+	return "<html><head></head><body><p>SUCCESS</p></body></html>"
 
 # Decorator for interacting with Facebook API
 @app.route('/fbconnect', methods=['POST', 'GET'])
