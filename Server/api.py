@@ -66,4 +66,4 @@ if __name__ == '__main__':
 
     #TODO: Change IP before running
 
-    app.run(host='192.168.43.198', port=8080)
+    app.run(host='157.50.11.158', port=8080)
