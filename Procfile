@@ -1,2 +1,2 @@
-web: python cd/Backend-Potterwatch/api.py
+web: python Backend-Potterwatch/api.py
 
